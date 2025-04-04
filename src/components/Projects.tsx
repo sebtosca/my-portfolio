@@ -16,8 +16,8 @@ const projects = [
     tech: ['LangChain', 'Phi3', 'Python', 'Full-Stack Dev', 'Hugging Face', 'PyTorch', 'TensorFlow'],
     github: 'https://github.com/sebtosca/cv-matcher',
     live: 'https://cv-matcher.example.com',
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1676464424606-c1c33a3a68fe'
+    video: '',
+    thumbnail: ''
   },
   {
     title: 'MLOps Classification Pipeline',
@@ -25,8 +25,8 @@ const projects = [
     tech: ['Python', 'PyTorch', 'Hugging Face', 'Fine-Tuning', 'Hyperparameter Search', 'LLM', 'ML'],
     github: 'https://github.com/sebtosca/mlops-pipeline',
     live: 'https://mlops-demo.example.com',
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1675426513962-63c49c0c6c72'
+    video: '',
+    thumbnail: ''
   },
 ];
 
