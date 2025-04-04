@@ -1,0 +1,5 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 50H550V150H50V50Z" fill="white"/>
+<text x="100" y="120" fill="#000000" font-family="Arial" font-size="72" font-weight="bold">SKEMA</text>
+<path d="M100 80L120 100L100 120" fill="#FF0000"/>
+</svg>

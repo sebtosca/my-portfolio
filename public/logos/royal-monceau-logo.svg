@@ -1,0 +1,6 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 50H750V150H50V50Z" fill="white"/>
+<text x="100" y="100" fill="#000000" font-family="Times New Roman" font-size="36">LE ROYAL MONCEAU</text>
+<text x="100" y="140" fill="#666666" font-family="Arial" font-size="24">RAFFLES PARIS</text>
+<path d="M350 30H450V50H350V30Z" fill="#000000"/>
+</svg>
