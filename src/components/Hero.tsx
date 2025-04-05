@@ -2,18 +2,21 @@ import React from 'react';
 import { ArrowDown, Brain, MessageSquare } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 
+// ✅ Importing image from src/images/
+import moiImage from '/images/Moi.jpg';
+
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative" id="about">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-black to-black -z-10" />
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
           className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden shadow-xl border-4 border-emerald-400/20"
           data-aos="fade-up"
         >
           <img 
-            src="/images/Moi.jpg"
+            src={moiImage}
             alt="Sebastien Toscano"
             className="w-full h-full object-cover"
           />

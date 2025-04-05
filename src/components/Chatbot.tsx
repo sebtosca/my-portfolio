@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Bot } from 'lucide-react';
-import GlowCard from './GlowCard';
+import glowCard from './glowCard';
 
 interface Message {
   text: string;

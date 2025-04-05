@@ -1,18 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Github, Play } from 'lucide-react';
-import GlowCard from './GlowCard';
+import GlowCard from './glowCard';
+
+// ✅ Import video like an image asset
+import mamaVideo from '/video/Askmamaisspeakingnow.mp4';
 
 const projects = [
   {
     title: 'Google Generative AI Hackathon',
-    description: 'We participated in the Google GenAI Hackathon, where we developed MamaAI—an intelligent assistant that identifies items from fridge or receipt images and generates personalized recipes and step-by-step cooking instructions, all tailored to dietary needs and health restrictions.',
+    description:
+      'We participated in the Google GenAI Hackathon, where we developed MamaAI—an intelligent assistant that identifies items from fridge or receipt images and generates personalized recipes and step-by-step cooking instructions, all tailored to dietary needs and health restrictions.',
     tech: ['Google Cloud', 'Vertex AI', 'Uvicorn', 'LangChain', 'FastAPI'],
-    thumbnail: '/public/video/Askmamaisspeakingnow.mp4',
-    video: '/public/video/Askmamaisspeakingnow.mp4'
+    video: mamaVideo,
+    thumbnail: '' // Optional: Add a JPG/PNG thumbnail if you like
   },
   {
     title: 'CV-Job Matching Chatbot',
-    description: 'AI-powered chatbot that matches CVs to job descriptions using advanced NLP and semantic search. Features real-time conversation and explanation capabilities. Utilized agentic AI with API calls to scrape job descriptions from the web.',
+    description:
+      'AI-powered chatbot that matches CVs to job descriptions using advanced NLP and semantic search. Features real-time conversation and explanation capabilities. Utilized agentic AI with API calls to scrape job descriptions from the web.',
     tech: ['LangChain', 'Phi3', 'Python', 'Full-Stack Dev', 'Hugging Face', 'PyTorch', 'TensorFlow'],
     github: 'https://github.com/sebtosca/cv-matcher',
     live: 'https://cv-matcher.example.com',
@@ -21,13 +26,14 @@ const projects = [
   },
   {
     title: 'MLOps Classification Pipeline',
-    description: 'Production-grade ML pipeline for document classification with automated training, validation, and deployment. Includes monitoring and drift detection.',
+    description:
+      'Production-grade ML pipeline for document classification with automated training, validation, and deployment. Includes monitoring and drift detection.',
     tech: ['Python', 'PyTorch', 'Hugging Face', 'Fine-Tuning', 'Hyperparameter Search', 'LLM', 'ML'],
     github: 'https://github.com/sebtosca/mlops-pipeline',
     live: 'https://mlops-demo.example.com',
     video: '',
     thumbnail: ''
-  },
+  }
 ];
 
 const Projects = () => {
@@ -64,8 +70,8 @@ const Projects = () => {
   };
 
   return (
-    <section 
-      className="py-16 min-h-[70vh] flex items-center bg-white" 
+    <section
+      className="py-16 min-h-[70vh] flex items-center bg-white"
       id="projects"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
@@ -78,7 +84,7 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-center mb-16 text-black" data-aos="fade-up">
           AI Projects
         </h2>
-        
+
         <div className="relative">
           {projects.map((project, index) => (
             <div
@@ -96,7 +102,7 @@ const Projects = () => {
                   <div className="flex-1 space-y-6">
                     <h3 className="text-2xl font-semibold text-black">{project.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{project.description}</p>
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
                         <span
@@ -135,33 +141,42 @@ const Projects = () => {
                   {/* Right side: Video/Thumbnail */}
                   <div className="flex-1 relative">
                     <div className="aspect-video rounded-xl overflow-hidden bg-black shadow-xl border border-white/10">
-                      {isPlaying && currentIndex === index ? (
+                      {isPlaying && currentIndex === index && project.video ? (
                         <div className="relative w-full h-full">
-                          <iframe
+                          <video
                             src={project.video}
+                            controls
+                            autoPlay
+                            muted
                             className="absolute inset-0 w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
                           />
                         </div>
                       ) : (
                         <div className="relative h-full group">
-                          <img
-                            src={project.thumbnail}
-                            alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <button
-                              onClick={() => setIsPlaying(true)}
-                              className="transform scale-90 group-hover:scale-100 transition-transform duration-300"
-                              aria-label="Play video"
-                            >
-                              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
-                                <Play className="w-8 h-8 text-black ml-1" />
-                              </div>
-                            </button>
-                          </div>
+                          {project.thumbnail ? (
+                            <img
+                              src={project.thumbnail}
+                              alt={project.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-white text-sm">
+                              No thumbnail
+                            </div>
+                          )}
+                          {project.video && (
+                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                              <button
+                                onClick={() => setIsPlaying(true)}
+                                className="transform scale-90 group-hover:scale-100 transition-transform duration-300"
+                                aria-label="Play video"
+                              >
+                                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                                  <Play className="w-8 h-8 text-black ml-1" />
+                                </div>
+                              </button>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>

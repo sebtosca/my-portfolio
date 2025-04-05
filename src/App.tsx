@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Navbar from './components/navbar';
+import Hero from './components/hero';
+import Experience from './components/experience';
+import Education from './components/education';
+import Projects from './components/projects';
+import Skills from './components/skills';
+import Contact from './components/contact';
+import Footer from './components/footer';
 
 function App() {
   useEffect(() => {

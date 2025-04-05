@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Mail, Send, Github, Linkedin, Plane as PaperPlane } from 'lucide-react';
 import { Toaster, toast } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
-import GlowCard from './GlowCard';
+import GlowCard from './glowCard';
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);

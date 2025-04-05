@@ -1,21 +1,26 @@
 import React from 'react';
 
+// ✅ Importing images from /src/images
+import skemaLogo from '/images/OIP.jpeg';
+import esieaLogo from '/images/ESIEA_logo.png';
+import gwuLogo from '/images/GWU.jpg';
+
 const schools = [
   {
     name: "SKEMA Business School",
-    logo: "/images/OIP.jpeg",
+    logo: skemaLogo,
     location: "Paris, France",
     url: "https://www.skema.edu/"
   },
   {
     name: "ESIEA School of Engineering",
-    logo: "/images/ESIEA_logo.png",
+    logo: esieaLogo,
     location: "Paris, France",
     url: "https://www.esiea.fr/"
   },
   {
     name: "The George Washington University",
-    logo: "/images/GWU.jpg",
+    logo: gwuLogo,
     location: "Washington, DC",
     url: "https://www.gwu.edu/"
   }

@@ -1,90 +1,13 @@
 import React from 'react';
-import GlowCard from './GlowCard';
+import GlowCard from './glowCard';
 
-interface SkillItem {
-  name: string;
-  logo: string;
-  darkModeLogo?: string;
-}
+// ✅ Import LangChain image locally from /src/images
+import langchainLogo from '/images/langchain3.webp';
 
-const skills: SkillItem[] = [
-  {
-    name: 'Python',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
-  },
-  {
-    name: 'R',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg'
-  },
-  {
-    name: 'JavaScript',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
-  },
-  {
-    name: 'PostgreSQL',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
-  },
-  {
-    name: 'TensorFlow',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'
-  },
-  {
-    name: 'PyTorch',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg'
-  },
-  {
-    name: 'Scikit-Learn',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg'
-  },
-  {
-    name: 'SciPy',
-    logo: 'https://raw.githubusercontent.com/scipy/scipy/main/doc/source/_static/logo.svg'
-  },
+const skills = [
   {
     name: 'LangChain',
-    logo: '/images/langchain3.webp'
-  },
-  {
-    name: 'Linux',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
-  },
-  {
-    name: 'GitHub',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-    darkModeLogo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg'
-  },
-  {
-    name: 'AWS',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg'
-  },
-  {
-    name: 'Docker',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
-  },
-  {
-    name: 'Google Analytics',
-    logo: 'https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg'
-  },
-  {
-    name: 'Vertex AI',
-    logo: 'https://www.gstatic.com/devrel-devsite/prod/v45f61267c22a27f819f857dba58e1d30bb8b3c973c9564a29e726a6a9c64c3d8/cloud/images/cloud-logo.svg'
-  },
-  {
-    name: 'Looker Studio',
-    logo: 'https://www.vectorlogo.zone/logos/looker/looker-icon.svg'
-  },
-  {
-    name: 'Tableau',
-    logo: 'https://cdn.worldvectorlogo.com/logos/tableau-software.svg'
-  },
-  {
-    name: 'Altair',
-    logo: 'https://altair.com/images/altair-logo-blue.svg',
-    darkModeLogo: 'https://altair.com/images/altair-logo-white.svg'
-  },
-  {
-    name: 'Adobe Campaign',
-    logo: 'https://www.vectorlogo.zone/logos/adobe/adobe-icon.svg'
+    logo: langchainLogo,
   }
 ];
 
@@ -99,7 +22,7 @@ const Skills = () => {
         <div className="relative overflow-hidden" data-aos="fade-up">
           <div className="skill-carousel-mask absolute left-0 w-[100px] h-full bg-gradient-to-r from-black via-black to-transparent z-10" />
           <div className="skill-carousel-mask absolute right-0 w-[100px] h-full bg-gradient-to-l from-black via-black to-transparent z-10" />
-          
+
           <div className="skill-carousel flex gap-8 animate-scroll hover:pause">
             {[...skills, ...skills].map((skill, index) => (
               <div
